@@ -1,0 +1,368 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+header,
+footer {
+  height: 70px;
+}
+
+footer {
+  padding-left: 20px;
+  transition: 0.5s;
+}
+
+footer.active {
+  padding-left: 320px;
+  transition: 0.5s;
+}
+
+#plant_container {
+  min-height: calc(100vh - 70px);
+  /* padding-left: 20px; */
+  transition: 0.5s;
+}
+
+#plant_container.active {
+  padding-left: 320px;
+  transition: 0.5s;
+}
+
+header {
+  display: flex;
+  padding: 0px 20px 10px 70px;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.5s;
+  position: relative;
+  z-index: 5;
+}
+
+header.active {
+  padding: 0px 20px 10px 370px;
+  transition: 0.5s;
+}
+
+header section:first-of-type {
+  display: flex;
+  justify-content: center;
+}
+
+header strong,
+header em {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0px 20px 0 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+header em {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0px 5px 0 0;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+}
+
+#add_new_plant {
+  width: 160px;
+  height: 40px;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  background-image: linear-gradient(109.6deg, rgba(234, 245, 45, 0.79) 11.2%, rgba(98, 210, 141, 0.88) 88%);
+  justify-self: flex-end;
+  cursor: pointer;
+}
+
+#add_new_plant img {
+  width: 25px;
+  height: auto;
+  margin-left: 10px;
+}
+
+nav {
+  position: fixed;
+  width: 0px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #658e9c;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  transition: 0.5s;
+  z-index: 10;
+}
+
+nav.active {
+  width: 300px;
+  transition: 0.5s;
+}
+
+nav button {
+  position: absolute;
+  top: 16px;
+  right: -60px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+nav.active button #top {
+  animation: animateTop 0.3s ease-out;
+  animation-fill-mode: forwards;
+}
+
+nav.active button #bottom {
+  animation: animateBottom 0.3s ease-out;
+  animation-fill-mode: forwards;
+}
+nav.active button #middle {
+  animation: animateMiddle 0.01s ease-out;
+  animation-fill-mode: forwards;
+}
+
+nav button #top {
+  animation: animateRevTop 0.3s ease-out;
+  animation-fill-mode: forwards;
+}
+
+nav button #bottom {
+  animation: animateRevBottom 0.3s ease-out;
+  animation-fill-mode: forwards;
+}
+nav button #middle {
+  animation-delay: 0.3s;
+  animation: animateRevMiddle 0.01s ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes animateTop {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(45deg) translate(20px, -10px);
+  }
+}
+
+@keyframes animateBottom {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-45deg) translate(-110px, -10px);
+  }
+}
+
+@keyframes animateMiddle {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes animateRevTop {
+  0% {
+    transform: rotate(45deg) translate(20px, -10px);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes animateRevBottom {
+  0% {
+    transform: rotate(-45deg) translate(-110px, -10px);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes animateRevMiddle {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* empty section */
+#empty_section,
+#plants_section {
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+#empty_section {
+  justify-content: flex-start;
+}
+
+#empty_section span:nth-child(1) {
+  position: absolute;
+  left: 50px;
+  font-size: 22px;
+  margin-left: 17px;
+}
+
+#plants_section figure {
+  width: 220px;
+  height: 250px;
+  position: relative;
+  -webkit-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.25);
+}
+
+#plants_section figure img {
+  width: 220px;
+  height: 150px;
+  object-fit: contain;
+  padding: 5px;
+  cursor: pointer;
+}
+
+#plants_section figure .loupe_img {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 2;
+  width: 30px;
+  height: auto;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#plants_section figure .loupe_img:hover {
+  transition: 0.3s;
+  transform: scale(1.1);
+}
+
+#plants_section figcaption {
+  font-weight: 600;
+  height: 85px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 
+
+
+#empty_section span:nth-child(2) {
+  margin-bottom: -70px;
+  position: relative;
+  right: -215px;
+  font-size: 25px;
+}
+
+#add_first_plant::after {
+  content: "siema siema ";
+  font-size: 20px;
+  color: pink;
+} */
+
+#shutteer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: rgba(255, 255, 255, 0);
+  transition: 0.3s;
+}
+
+#shutteer.active {
+  z-index: 9;
+  transition: 0.3s;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+#plant_details {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 100px);
+  overflow: hidden;
+  background-color: white;
+  z-index: -1;
+  padding: 10px 20px 40px 20px;
+  transition: 0.5s;
+  opacity: 0;
+  display: flex;
+  flex-direction: row;
+  overflow-y: scroll;
+  margin-top: 50px;
+}
+
+#plant_details.active {
+  z-index: 5;
+  transition: 0.5s;
+  opacity: 1;
+}
+
+.none {
+  display: none !important;
+}
+
+#plant_details_close_button {
+  position: absolute;
+  top: 23px;
+  right: 20px;
+  border: 0;
+  background: none;
+  z-index: 12;
+  cursor: pointer;
+  display: none;
+}
+
+#plant_details_close_button img {
+  width: 20px;
+  height: 20px;
+}
+
+.block {
+  display: block !important;
+}
+
+#plant_details_name {
+  margin-top: 20px;
+}
+
+#plant_details_image img {
+  width: 460px;
+}
+
+#plant_details_description {
+  margin-top: 20px;
+  padding-right: 55px;
+}
+
+.hidden-y {
+  overflow-y: hidden;
+}

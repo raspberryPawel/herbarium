@@ -1,0 +1,57 @@
+/* medium */
+@media only screen and (max-width: 768px) {
+  #plant_container.active {
+    padding-left: 20px;
+    transition: 0.5s;
+  }
+  #empty_section span:nth-child(1) {
+    position: absolute;
+    left: 0px;
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    margin-top: -40px;
+  }
+  #empty_section svg {
+    margin-left: -20px;
+  }
+  nav.active {
+    width: 265px;
+  }
+
+  #plant_details {
+    flex-direction: column;
+  }
+  #plant_details_image img {
+    width: 200px;
+  }
+}
+
+/* Extra small <576px */
+@media only screen and (max-width: 576px) {
+  header {
+    padding: 15px 0px 10px 0px;
+    flex-direction: column;
+    height: 85px;
+  }
+
+  header section:first-of-type strong {
+    padding: 0;
+  }
+  header section:first-of-type,
+  header #add_new_plant {
+    width: 175px;
+    align-self: flex-end;
+    margin-right: 60px;
+  }
+  header.active {
+    padding: 5px 0px 10px 0px;
+    transition: 0.5s;
+  }
+  #empty_section span:nth-child(1) strong {
+    width: 130px;
+  }
+  #empty_section span:nth-child(1) {
+    margin-top: -60px;
+  }
+}
